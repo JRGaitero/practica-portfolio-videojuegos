@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Cave Quest</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon/site.webmanifest">
+    <link rel="mask-icon" href="assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="styles.scss"/>
+    <script type="module" src="app.js"></script>
+</head>
+<body>
+    <main>
+        <input type="checkbox" name="un-mute" id="un-mute" hidden>
+        <label for="un-mute" class="unmuted">
+            <img src="assets/volume-un-muted.svg" alt="">
+        </label>
+        <label for="un-mute" class="muted">
+            <img src="assets/volume-muted.svg" alt="">
+        </label>
+        <section class="home">
+            <video autoplay muted loop src="assets/video.mp4"></video>
+            <div class="slider">
+                <div class="logo-container">
+                    <img src="assets/logo.svg" alt="">
+                </div>
+                <div class="slider-container">
+                    <input type="radio" id="1" name="image-slide" hidden>
+                    <input type="radio" id="2" name="image-slide" hidden>
+                    <input type="radio" id="3" name="image-slide" hidden>
+                    <div class="slide">
+                        <div class="item-slide">
+                            <img src="assets/map1.png" alt="">
+                        </div>
+                        <div class="item-slide">
+                            <img src="assets/map2.png" alt="">
+                        </div>
+                        <div class="item-slide">
+                            <img src="assets/map3.png" alt="">
+                        </div>
+                    </div>
+                    <div class="pagination">
+                        <label for="1" class="pagination-item">
+                            <img src="assets/map1.png" alt="">
+                        </label>
+                        <label for="2" class="pagination-item">
+                            <img src="assets/map2.png" alt="">
+                        </label>
+                        <label for="3" class="pagination-item">
+                            <img src="assets/map3.png" alt="">
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="characters">
+            <div class="character-container">
+                <img srcset="assets/hero-300w.png 300w,
+                             assets/hero-400w.png 400w,
+                             assets/hero-511w.png 511w"
+                     sizes="(max-width: 300px) 260px,
+                            (max-width: 400px) 360px,
+                            511px"
+                     src="assets/hero-511w.png" alt="hero">
+                <p>A hero in search of his past follows the rumour of an ancient treasure of his ancestors hidden in
+                    the depths of a cave guarded by an ancient evil</p>
+            </div>
+            <div class="character-container">
+                <img srcset="assets/villain-300w.png 300w,
+                             assets/villain-400w.png 400w,
+                             assets/villain-511w.png 511w"
+                     sizes="(max-width: 300px) 260px,
+                            (max-width: 400px) 360px,
+                            511px"
+                     src="assets/villain-511w.png" alt="villain">
+                <p>The ancestral evil, custodian of the treasure, murderer of heroes, with an unquenchable thirst for
+                    blood, will oppose anyone who dares to set foot in the cave</p>
+            </div>
+        </section>
+        <section class="ending">
+            <div class="ending-container">
+                <p>What are you waiting for?</p>
+                <p>Enter Cave Quest</p>
+            </div>
+        </section>
+    </main>
+    <audio src="assets/music.mp3" autoplay loop muted></audio>
+</body>
+</html>

@@ -1,0 +1,227 @@
+@import "https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap";
+@keyframes autoplay {
+  33% {
+    transform: translate3d(0%, 0, 0);
+  }
+  66% {
+    transform: translate3d(-100%, 0, 0);
+  }
+  100% {
+    transform: translate3d(-200%, 0, 0);
+  }
+}
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #4A2125;
+}
+.muted {
+  max-width: 2%;
+  position: fixed;
+  top: 5vmin;
+  left: 5vmin;
+  z-index: 2;
+}
+.muted img {
+  padding: 1vmin;
+  background-color: rgba(255, 255, 255, 0.8);
+  width: 4vmin;
+  height: 4vmin;
+  border-radius: 5px;
+}
+.unmuted {
+  max-width: 2%;
+  position: fixed;
+  top: 5vmin;
+  left: 5vmin;
+  z-index: 2;
+}
+.unmuted img {
+  padding: 1vmin;
+  background-color: rgba(255, 255, 255, 0.8);
+  width: 4vmin;
+  height: 4vmin;
+  display: none;
+  border-radius: 5px;
+}
+input[id=un-mute]:checked ~ .unmuted img {
+  display: initial;
+}
+input[id=un-mute]:checked ~ .muted img {
+  display: none;
+}
+.home {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+video {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  object-fit: cover;
+  z-index: 0;
+}
+.slider {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: rgba(255, 255, 255, 0.55);
+}
+.slider-container {
+  position: relative;
+  width: 35%;
+  max-width: 960px;
+  overflow: hidden;
+  border-radius: 20px;
+}
+.slider-container img {
+  max-width: 100%;
+}
+.slide {
+  display: flex;
+  transform: translate3d(0, 0, 0);
+  transition: all 600ms;
+  animation-name: autoplay;
+  animation-duration: 10s;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+}
+.item-slide {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  flex-grow: 0;
+  max-width: 100%;
+}
+.pagination {
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.pagination-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid white;
+  width: 1.5vmin;
+  height: 1.5vmin;
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin: 0 2vmin;
+  text-align: center;
+  transition: all 300ms;
+}
+.pagination-item:hover {
+  transform: scale(2);
+}
+.pagination-item:hover img {
+  opacity: 1;
+  transform: scale(1);
+}
+.pagination-item img {
+  display: inline-block;
+  max-width: none;
+  height: 100%;
+  transform: scale(1);
+  opacity: 0;
+  transition: all 300ms;
+}
+input[id="1"]:checked ~ .slide {
+  animation: none;
+  transform: translate3d(0, 0, 0);
+}
+input[id="1"]:checked ~ .pagination .pagination-item[for="1"] {
+  background-color: white;
+}
+input[id="2"]:checked ~ .slide {
+  animation: none;
+  transform: translate3d(-100%, 0, 0);
+}
+input[id="2"]:checked ~ .pagination .pagination-item[for="2"] {
+  background-color: white;
+}
+input[id="3"]:checked ~ .slide {
+  animation: none;
+  transform: translate3d(-200%, 0, 0);
+}
+input[id="3"]:checked ~ .pagination .pagination-item[for="3"] {
+  background-color: white;
+}
+.logo-container {
+  width: 35%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.characters {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.character-container {
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.character-container:last-child {
+  flex-direction: row-reverse;
+}
+.character-container img {
+  height: 60%;
+  padding: 0 10vmin;
+}
+.character-container p {
+  font-family: "Press Start 2P", cursive;
+  font-size: 2.5vmin;
+  font-weight: bolder;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+  width: 50%;
+  padding: 0 10vmin;
+}
+.ending {
+  height: 100vh;
+  width: 100%;
+  background-image: url("map_hero_moon.4ed67759.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.ending .ending-container {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.ending p {
+  font-family: "Press Start 2P", cursive;
+  font-size: 2.5vmin;
+  font-weight: bolder;
+  text-align: center;
+  color: #4A2125;
+  width: 50%;
+  padding: 0 10vmin;
+  white-space: pre-line;
+}
+.ending p:last-child {
+  font-size: 5vmin;
+}
+/*# sourceMappingURL=index.4a508c1d.css.map */
